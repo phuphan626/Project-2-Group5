@@ -4,25 +4,25 @@
 
 CREATE TABLE "Pitching-Averages" (
     "Year" int   NOT NULL,
-    "Tms" varchar   NOT NULL,
-    "R/G"  varchar  NOT NULL,
-    "ERA" varchar   NOT NULL,
-    "GF" varchar   NOT NULL,
-    "CG" varchar   NOT NULL,
-    "HR" varchar   NOT NULL,
-    "SO" varchar   NOT NULL,
-    "HBP" varchar   NOT NULL,
-    "HR9" varchar   NOT NULL,
-    "SO9" varchar   NOT NULL
+    "Tms" float   NOT NULL,
+    "R/G"  float  NOT NULL,
+    "ERA" float   NOT NULL,
+    "GF" float   NOT NULL,
+    "CG" float   NOT NULL,
+    "HR" float   NOT NULL,
+    "SO" float   NOT NULL,
+    "HBP" float   NOT NULL,
+    "HR9" float   NOT NULL,
+    "SO9" float   NOT NULL
 );
 
 CREATE TABLE "Batting-Stats" (
     "Year" int   NOT NULL,
-    "Tms" varchar   NOT NULL,
-    "2B" varchar   NOT NULL,
-    "3B" varchar   NOT NULL,
-    "SB" varchar   NOT NULL,
-    "BA" varchar   NOT NULL,
-    "OPS" varchar   NOT NULL
+    "Tms" float   NOT NULL,
+    "2B" float   NOT NULL,
+    "3B" float   NOT NULL,
+    "SB" float   NOT NULL,
+    "BA" float   NOT NULL,
+    "OPS" float   NOT NULL
 );
 
