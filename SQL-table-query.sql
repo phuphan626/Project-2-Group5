@@ -2,7 +2,7 @@
 -- NOTE! If you have used non-SQL datatypes in your design, you will have to change these here.
 
 
-CREATE TABLE "Pitching-Averages" (
+CREATE TABLE "pitching_averages" (
     "Year" int   NOT NULL,
     "Tms" float   NOT NULL,
     "R/G"  float  NOT NULL,
@@ -16,7 +16,7 @@ CREATE TABLE "Pitching-Averages" (
     "SO9" float   NOT NULL
 );
 
-CREATE TABLE "Batting-Stats" (
+CREATE TABLE "batting_stats" (
     "Year" int   NOT NULL,
     "Tms" float   NOT NULL,
     "2B" float   NOT NULL,

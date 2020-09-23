@@ -1,17 +1,36 @@
-import psycopg2
-import sys
-from  flask import Flask,render_template
-from flask import jsonify
-import config
+# Import Dependencies
+from flask import Flask, jsonify, render_template
+import psycopg2 # for database connection
 from config import my_key
-app=Flask(__name__)
-@app.route('/data')
-def get_data():
-    con = psycopg2.connect("host='localhost' dbname='project2-db' user='postgres' password='")  
-    cur = con.cursor()
+from pprint import pprint
+import json
+# Create app object
+app = Flask(__name__)
+# Create the route for Flask
+@app.route("/")
+def index():
+    return render_template('index.html')
+@app.route("/pitching")    
+def pitching():
+# Create Postgres connection variables
+    t_host = "localhost"
+    t_dbname = "project2-db"
+    t_pw = my_key
+    db_conn = psycopg2.connect(host=t_host, dbname=t_dbname, user='postgres',password=t_pw)
+    cur = db_conn.cursor()
     cur.execute("select * from pitching_averages")
-    data = [col for col in cur]
-    cur.close()
+    data = cur.fetchall()
     return jsonify(data)
+@app.route('/batting')    
+def batting():
+# Create Postgres connection variables
+    t_host = "localhost"
+    t_dbname = "project2-db"
+    t_pw = my_key
+    db_conn = psycopg2.connect(host=t_host, dbname=t_dbname, user='postgres',password=t_pw)
+    cur = db_conn.cursor()
+    cur.execute("select * from batting_stats")
+    data = cur.fetchall()
+    return jsonify(data)    
 if __name__ == '__main__':
     app.run(debug=False)
