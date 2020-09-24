@@ -10,9 +10,12 @@ app = Flask(__name__)
 @app.route("/")
 def index():
     return render_template('index.html')
+@app.route('/pitching_graph')
+@app.route('/batting_graph')
+@app.route('/writeup')
 @app.route("/pitching")    
 def pitching():
-# Create Postgres connection variables
+# Create Postgres connection path
     t_host = "localhost"
     t_dbname = "project2-db"
     t_pw = my_key
@@ -23,7 +26,7 @@ def pitching():
     return jsonify(data)
 @app.route('/batting')    
 def batting():
-# Create Postgres connection variables
+# Create Postgres connection path
     t_host = "localhost"
     t_dbname = "project2-db"
     t_pw = my_key
