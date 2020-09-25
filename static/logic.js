@@ -1,3 +1,4 @@
-// Get data from the index.html 
-var data = document.getElementById("pitching").value
-console.log(data)
+// Read the json file in for pitching table
+d3.json('./json_files/pitching.json').then(data => console.log(data)
+
+)
