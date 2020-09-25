@@ -6,7 +6,7 @@ from pprint import pprint
 import json
 # Create app object
 app = Flask(__name__)
-# Create the route for Flask
+# Create the routes for Flask
 @app.route("/")
 def index():
     return render_template('index.html')

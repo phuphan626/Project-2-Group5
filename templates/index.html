@@ -5,14 +5,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Baseball Statistics</title>
+    <script src="https://d3js.org/d3.v5.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3-tip/0.7.1/d3-tip.min.js"></script>
 </head>
 
 <body>
 
-    <header><strong>Welcome to our Homepage</strong> </header>
+    <header class='header'><strong>Welcome to our Homepage</strong> </header>
     <div id='pitching-table'>
         <h1><strong>Pitching Averages Table</strong></h1>
-        <table border="1" class="dataframe">
+        <table id='pitching' border="1" class="dataframe">
             <thead>
                 <tr style="text-align: right;">
                     <th></th>
@@ -1449,7 +1451,7 @@
     </div>
     <div id='batting-table'>
         <h1><strong>Batting Averages Table</strong></h1>
-        <table border="1" class="dataframe">
+        <table id='batting' border="1" class="dataframe">
             <thead>
                 <tr style="text-align: right;">
                     <th></th>
@@ -2480,8 +2482,7 @@
 
 
 </body>
-<script src="https://d3js.org/d3.v5.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/d3-tip/0.7.1/d3-tip.min.js"></script>
-<script type="text/javascript" src="logic.js"></script>
+<script type="text/javascript" src="/static/logic.js"></script>
+
 
 </html>
