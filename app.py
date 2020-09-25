@@ -6,6 +6,7 @@ from pprint import pprint
 import json
 # Create app object
 app = Flask(__name__)
+app.config['SEND_FILE_MAX_AGE_DEFAULT'] = 0
 # Create the routes for Flask
 @app.route("/")
 def index():
