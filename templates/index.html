@@ -7,6 +7,7 @@
     <title>Baseball Statistics</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.9.1/d3.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/d3-tip/0.7.1/d3-tip.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
     <script src="//cdn.jsdelivr.net/chartist.js/latest/chartist.min.js"></script>
     <link href="//cdn.jsdelivr.net/chartist.js/latest/chartist.min.css" rel="stylesheet" type="text/css" />
     <meta charset="utf-8">
@@ -14,8 +15,8 @@
 
 <body>
 
-    <header class='header'><strong>Welcome to our Homepage</strong> </header>
-    <div id='chart'></div>
+    <header class='header'><strong>Welcome to our Homepage</strong></header>
+    <canvas id="chart1">The first chart</canvas>
     <div id='pitching-table'>
         <h1><strong>Pitching Averages Table</strong></h1>
         <table id='pitching' border="1" class="dataframe">
@@ -24,7 +25,7 @@
                     <th></th>
                     <th>Year</th>
                     <th>Tms</th>
-                    <th>R/G</th>
+                    <th>RG</th>
                     <th>ERA</th>
                     <th>GF</th>
                     <th>CG</th>
@@ -2487,8 +2488,8 @@
 
 </body>
 <script type="text/javascript" src="/static/logic.js"></script>
-<script type="json" src='/data/pitching.json'></script>
-<script type="json" src='/data/batting.json'></script>
+<!-- <script type="json" src='/data/pitching.json'></script>
+<script type="json" src='/data/batting.json'></script> -->
 
 
 

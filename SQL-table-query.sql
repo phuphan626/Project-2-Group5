@@ -5,7 +5,7 @@
 CREATE TABLE "pitching_averages" (
     "Year" int   NOT NULL,
     "Tms" float   NOT NULL,
-    "R/G"  float  NOT NULL,
+    "RG"  float  NOT NULL,
     "ERA" float   NOT NULL,
     "GF" float   NOT NULL,
     "CG" float   NOT NULL,
