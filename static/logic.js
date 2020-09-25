@@ -8,8 +8,8 @@ d3.json('/static/pitching.json').then(function(users) {
             return user.ERA;
         })
     };
-    console.log(data)
-    var chart = new Chartist.Bar('#chart', dataERA, {
+    console.log(dataERA)
+    var chart = new Chartist.Bar('#chart1', dataERA, {
         distributeSeries: true
     });
 });
@@ -23,8 +23,8 @@ d3.json('/static/pitching.json').then(function(users) {
             return user.HR;
         })
     };
-    console.log(data)
-    var chart = new Chartist.Bar('#chart', dataHR, {
+    console.log(dataHR)
+    var chart = new Chartist.Bar('#chart2', dataHR, {
         distributeSeries: true
     });
 });
@@ -38,8 +38,8 @@ d3.json('/static/pitching.json').then(function(users) {
             return user.HR;
         })
     };
-    console.log(data)
-    var chart = new Chartist.Bar('#chart', dataSO, {
+    console.log(dataSO)
+    var chart = new Chartist.Bar('#chart3', dataSO, {
         distributeSeries: true
     });
 });
