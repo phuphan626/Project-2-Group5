@@ -1,3 +1,4 @@
+
 // Read the json file in for pitching table
 d3.json('/static/pitching.json').then(function(users) {
     // Mapping all the columns to get the data
