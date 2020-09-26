@@ -119,6 +119,13 @@ d3.json('/static/batting.json').then(function(users) {
     });
     // Making the fourth chart
     var chart4 = document.getElementById('chart4').getContext('2d')
+    var gradientStroke = chart4.createLinearGradient(500, 0, 100, 0);
+    gradientStroke.addColorStop(0, "#f54242");
+    gradientStroke.addColorStop(0.2, "#bcf542");
+    gradientStroke.addColorStop(0.4, "#42ecf5");
+    gradientStroke.addColorStop(0.6, "#4275f5");
+    gradientStroke.addColorStop(0.8, "#b642f5");
+    gradientStroke.addColorStop(1, "#f49080");
     var fourth_chart = new Chart(chart4, {
         // Define the type for the chart, we can put in bar or line or google for more type
         type: 'line',
@@ -129,7 +136,12 @@ d3.json('/static/batting.json').then(function(users) {
             // This is for the data to plot for yaxis
             datasets: [{
                 label: 'Home Run',
-                borderColor: 'red',
+                borderColor: gradientStroke,
+                pointBorderColor: gradientStroke,
+                pointBackgroundColor: gradientStroke,
+                pointHoverBackgroundColor: gradientStroke,
+                pointHoverBorderColor: gradientStroke,
+                boderJoinStyle: 2,
                 data: HR,
                 fill: false
             }]
@@ -152,6 +164,13 @@ d3.json('/static/batting.json').then(function(users) {
         }
     });
     var chart5 = document.getElementById('chart5').getContext('2d')
+    var gradientStroke = chart5.createLinearGradient(500, 0, 100, 0);
+    gradientStroke.addColorStop(0, "#f54242");
+    gradientStroke.addColorStop(0.2, "#bcf542");
+    gradientStroke.addColorStop(0.4, "#42ecf5");
+    gradientStroke.addColorStop(0.6, "#4275f5");
+    gradientStroke.addColorStop(0.8, "#b642f5");
+    gradientStroke.addColorStop(1, "#f49080");
     var fifth_chart = new Chart(chart5, {
         // Define the type for the chart, we can put in bar or line or google for more type
         type: 'line',
@@ -162,7 +181,11 @@ d3.json('/static/batting.json').then(function(users) {
             // This is for the data to plot for yaxis
             datasets: [{
                 label: 'Batting Average',
-                borderColor: 'green',
+                borderColor: gradientStroke,
+                pointBorderColor: gradientStroke,
+                pointBackgroundColor: gradientStroke,
+                pointHoverBackgroundColor: gradientStroke,
+                pointHoverBorderColor: gradientStroke,
                 data: BA,
                 fill: false
             }]
