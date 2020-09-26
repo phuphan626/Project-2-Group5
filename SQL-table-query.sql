@@ -19,8 +19,8 @@ CREATE TABLE "pitching_averages" (
 CREATE TABLE "batting_stats" (
     "Year" int   NOT NULL,
     "Tms" float   NOT NULL,
-    "2B" float   NOT NULL,
-    "3B" float   NOT NULL,
+    "BB" float   NOT NULL,
+    "BBB" float   NOT NULL,
     "SB" float   NOT NULL,
     "BA" float   NOT NULL,
     "OPS" float   NOT NULL
