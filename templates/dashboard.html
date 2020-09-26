@@ -1,0 +1,175 @@
+<!-- 
+=========================================================
+ Light Bootstrap Dashboard - v2.0.1
+=========================================================
+
+ Product Page: https://www.creative-tim.com/product/light-bootstrap-dashboard
+ Copyright 2019 Creative Tim (https://www.creative-tim.com)
+ Licensed under MIT (https://github.com/creativetimofficial/light-bootstrap-dashboard/blob/master/LICENSE)
+
+ Coded by Creative Tim
+
+=========================================================
+
+ The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.  -->
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <link rel="apple-touch-icon" sizes="76x76" href="../assets/img/apple-icon.png">
+    <script src="https://kit.fontawesome.com/3d0e170f3d.js" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.9.1/d3.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3-tip/0.7.1/d3-tip.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
+    <script src="//cdn.jsdelivr.net/chartist.js/latest/chartist.min.js"></script>
+    <link href="//cdn.jsdelivr.net/chartist.js/latest/chartist.min.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="icon" type="image/png" href="../assets/img/favicon.ico">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <title>Visual Exploration: A Century of Baseball</title>
+    <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no' name='viewport' />
+    <!--     Fonts and icons     -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.9.1/d3.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" />
+    <!-- CSS Files -->
+    <link href="../assets/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="../assets/css/light-bootstrap-dashboard.css?v=2.0.0 " rel="stylesheet" />
+    <!-- CSS Just for demo purpose, don't include it in your project -->
+    <link href="../assets/css/demo.css" rel="stylesheet" />
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="sidebar" data-color="blue">
+            <!--
+        Tip 1: You can change the color of the sidebar using: data-color="purple | blue | green | orange | red"
+
+        Tip 2: you can also add an image using data-image tag
+    -->
+            <div class="sidebar-wrapper">
+                <div class="logo">
+                    <a class="simple-text">
+                        A Century of <br> Baseball 
+                    </a>
+                </div>
+                <ul class="nav">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="./dashboard.html">
+                            <i class="nc-icon nc-umbrella-13"></i>
+                            <p>Overview</p>
+                        </a>
+                        
+                    </li>
+                    <li >
+                        <a class = "nav-link" href = "./pitching.html">
+                            <i class= "nc-icon nc-send"></i>
+                            <p>Pitching</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="nav-link" href="./batting.html">
+                            <i class="nc-icon nc-chart-bar-32"></i>
+                            <p>Batting</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="nav-link" href="./tables.html">
+                            <i class="nc-icon nc-layers-3"></i>
+                            <p>Tables</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="nav-link" href="./considerations.html">
+                            <i class="nc-icon nc-chat-round"></i>
+                            <p>Considerations</p>
+                        </a>
+                    </li>
+                    
+                </ul>
+            </div>
+        </div>
+        <div class="main-panel">
+            
+                    <button href="" class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
+                       
+                    </button>
+                    <div class="collapse navbar-collapse justify-content-end" id="navigation">
+                        <ul class="nav navbar-nav mr-auto">
+                            
+                    
+                </div>
+            </nav>
+            <!-- End Navbar -->
+            <div class="content">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="card ">
+                                <div class="card-header ">
+                                    <h2 class="card-title">Visual Exploration: A Century of Baseball</h2>
+                                    
+                                    <p class="card-category">A story written in data</p>
+                                </div>
+                                <div>
+                                    <p class = "card-body">
+                                        Since the advent of the scorecard in the 1870’s the game of baseball has forever been tied to statistics. 
+                                        Keeping score was a way for fans and enthusiasts to relive the game by paying attention to each and every event on the field. 
+                                        As technology progressed and stats were posted on the jumbotron for the entire ballpark to see, manual score-keeping gradually lost popularity, 
+                                        but the marriage between statistics and baseball was solidified forever. <br>
+                                        <br>
+                                        Analysis of baseball statistics has been performed by team owners, managers 
+                                        and fans since the 1940’s to gain an edge on the competition. With the rise of <a href = "https://sabr.org/sabermetrics">Sabermetrics</a> and 
+                                        the Oakland A’s <a href = "https://en.wikipedia.org/wiki/2002_Oakland_Athletics_season">historic season</a> in the early 2000's, 
+                                        the collection and analysis of baseball statistics took on a whole new meaning: smaller, underfunded teams could take on the established powerhouses by 
+                                        the careful and nuanced application of empirical analysis. Fast forward to 2020 and every single team has a robust analytics department that plays a major 
+                                        role in the teams overall strategy, as well as day to day game planning. <br>
+                                        <br>
+                                        In this project we analyzed the changes in a few key batting and pitching metrics and visualized these changes over time. We also analyzed the stats before and after Sabermetrics became widely popular to explore how
+                                        analytics changed the game. To do this, we used <a href = "https://pandas.pydata.org">Pandas</a> to web-scrape Baseball Reference's 
+                                        historical data for several key <a href = "https://www.baseball-reference.com/leagues/MLB/bat.shtml">batting</a> and <a href="https://www.baseball-reference.com/leagues/MLB/pitch.shtml">pitching</a> metrics. 
+                                        Once the data was extracted and transformed, we loaded it into a <a href="https://www.postgresql.org">PostgreSQL</a> relational database.
+                                        We then used <a href = "https://flask.palletsprojects.com/en/1.1.x/">Flask</a> to serve the connection between our database and visualizations. Our interactive visualizations were made using <a href = "https://www.chartjs.org">Charts.js and D3.js</a>. 
+                                        The dynamic visualizations we created give us a good picture of the ever changing game of baseball from a statistical perspective. Explore our vizualizations by clicking through the navigation bar on the left side of the page.
+                                        Refer to <a href = "considerations.html">Considerations</a> to see our breakdown on why we think these changes happened.<br><br>
+                                        Special thanks to the team at <a href = "https://github.com/creativetimofficial/light-bootstrap-dashboard/tree/master/BS3">Creative Tim</a> for 
+                                        providing the Bootstrap framework for our dashboard.
+                                    </p>
+                                </div>
+                                
+                                    
+                                    
+                                </div>
+                            </div>
+                        </div>
+                        
+                        
+    
+</body>
+<!--   Core JS Files   -->
+<script src="../assets/js/core/jquery.3.2.1.min.js" type="text/javascript"></script>
+<script src="../assets/js/core/popper.min.js" type="text/javascript"></script>
+<script src="../assets/js/core/bootstrap.min.js" type="text/javascript"></script>
+
+
+<!--  Chartist Plugin  -->
+<script src="../assets/js/plugins/chartist.min.js"></script>
+<!--  Notifications Plugin    -->
+<script src="../assets/js/plugins/bootstrap-notify.js"></script>
+<!-- Control Center for Light Bootstrap Dashboard: scripts for the example pages etc -->
+<script src="../assets/js/light-bootstrap-dashboard.js?v=2.0.0 " type="text/javascript"></script>
+
+<script type="text/javascript" src="../static/logic.js"></script>
+
+<script type="text/javascript">
+    $(document).ready(function() {
+        // Javascript method's body can be found in assets/js/demos.js
+        demo.initDashboardPageCharts();
+
+        demo.showNotification();
+
+    });
+</script>
+
+</html>
