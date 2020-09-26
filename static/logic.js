@@ -25,11 +25,15 @@ d3.json('/static/pitching.json').then(function(users) {
             labels: Year,
             // This is for the data to plot for yaxis
             datasets: [{
-                label: 'Team',
+                barPercentage: 0.5,
+                barThickness: 6,
+                maxBarThickness: 8,
+                minBarLength: 2,
+                label: 'Teams',
                 backgroundColor: '#caf270',
                 data: Team
             }, {
-                label: 'RG',
+                label: 'R/G',
                 backgroundColor: '#45c490',
                 data: RG
             }, {
@@ -37,9 +41,13 @@ d3.json('/static/pitching.json').then(function(users) {
                 backgroundColor: '#008d93',
                 data: ERA
             }, {
-                label: 'GF',
+                label: 'HR',
                 backgroundColor: '#2e5468',
-                data: GF
+                data: HR  
+            },{
+                label:'SO/9',
+                backgroundColor:'red',
+                data:SO9
             }]
         },
         // This is the options that go with the chart
@@ -60,151 +68,129 @@ d3.json('/static/pitching.json').then(function(users) {
         }
     });
     // Making the second chart
-    let chart2 = document.getElementById('chart2').getContext('2d');
-    // Create the polar area plot for second chart
-    var second_chart = new Chart(chart2, {
-        type: 'polarArea',
-        data: {
-            labels: Year,
-            datasets: [{
-                label: 'Home Run',
-                data: HR,
-                backgroundColor: '#008d93',
-                hoverBackgroundColor: '#caf270',
-                hoverBorderWidth: 1,
-                borderColor: 'black'
-            }],
-            options: {
-                responsive: true,
-                aspectRatio: 2,
-                maintainAspectRatio: true
-            }
-        },
-    })
-});
-// Read in the batting json file
-d3.json('/static/batting.json').then(function(users) {
-    // Map data to variables
-    var Year = (users.map(item => item.Year)).reverse();
-    var BB = (users.map(item => item.BB)).reverse();
-    var BBB = (users.map(item => item.BBB)).reverse();
-    var Team = (users.map(item => item.Tms)).reverse();
-    var SB = (users.map(item => item.SB)).reverse();
-    var BA = (users.map(item => item.BA)).reverse();
-    var OPS = (users.map(item => item.OPS)).reverse();
-    var HR = (users.map(item => item.HR)).reverse();
-
-    // Geting the first chart for batting
-    var chart3 = document.getElementById('chart3').getContext('2d');
-    // Making the chart
-    var third_chart = new Chart(chart3, {
-        type: 'radar',
-        data: {
-            labels: Year,
-            datasets: [{
-                label: 'Doubles',
-                backgroundColor: 'rgba(200,0,0,0.2)',
-                data: BB
-            }, {
-                label: 'Triples ',
-                backgroundColor: 'rgba(0,0,200,0.2)',
-                data: BBB
-            }, {
-                label: 'Stolen Bases',
-                backgroundColor: 'rgba(0,200,0,0.2',
-                data: SB
-
-            }]
-        }
-    });
-    // Making the fourth chart
-    var chart4 = document.getElementById('chart4').getContext('2d')
-    var gradientStroke = chart4.createLinearGradient(500, 0, 100, 0);
-    gradientStroke.addColorStop(0, "#f54242");
-    gradientStroke.addColorStop(0.2, "#bcf542");
-    gradientStroke.addColorStop(0.4, "#42ecf5");
-    gradientStroke.addColorStop(0.6, "#4275f5");
-    gradientStroke.addColorStop(0.8, "#b642f5");
-    gradientStroke.addColorStop(1, "#f49080");
-    var fourth_chart = new Chart(chart4, {
-        // Define the type for the chart, we can put in bar or line or google for more type
-        type: 'line',
-        // This is where we define the xaxis and the data for yaxis
-        data: {
-            // Define the axis as Year
-            labels: Year,
-            // This is for the data to plot for yaxis
-            datasets: [{
-                label: 'Home Run',
-                borderColor: gradientStroke,
-                pointBorderColor: gradientStroke,
-                pointBackgroundColor: gradientStroke,
-                pointHoverBackgroundColor: gradientStroke,
-                pointHoverBorderColor: gradientStroke,
-                boderJoinStyle: 2,
-                data: HR,
-                fill: false
-            }]
-        },
-        // This is the options that go with the chart
-        options: {
-            tooltips: {
-                displayColors: true,
-                callbacks: { mode: 'x' },
-            },
-            scales: {
-                xAxes: [{ stacked: true, gridLines: { display: false } }],
-                yAxes: [{ stacked: true, ticks: { beginAtZero: true }, type: 'linear' }]
-            },
-            responsive: true,
-            aspectRatio: 2,
-            maintainAspectRatio: true,
-            legend: { position: 'bottom' }
-
-        }
-    });
-    var chart5 = document.getElementById('chart5').getContext('2d')
-    var gradientStroke = chart5.createLinearGradient(500, 0, 100, 0);
-    gradientStroke.addColorStop(0, "#f54242");
-    gradientStroke.addColorStop(0.2, "#bcf542");
-    gradientStroke.addColorStop(0.4, "#42ecf5");
-    gradientStroke.addColorStop(0.6, "#4275f5");
-    gradientStroke.addColorStop(0.8, "#b642f5");
-    gradientStroke.addColorStop(1, "#f49080");
-    var fifth_chart = new Chart(chart5, {
-        // Define the type for the chart, we can put in bar or line or google for more type
-        type: 'line',
-        // This is where we define the xaxis and the data for yaxis
-        data: {
-            // Define the axis as Year
-            labels: Year,
-            // This is for the data to plot for yaxis
-            datasets: [{
-                label: 'Batting Average',
-                borderColor: gradientStroke,
-                pointBorderColor: gradientStroke,
-                pointBackgroundColor: gradientStroke,
-                pointHoverBackgroundColor: gradientStroke,
-                pointHoverBorderColor: gradientStroke,
-                data: BA,
-                fill: false
-            }]
-        },
-        // This is the options that go with the chart
-        options: {
-            tooltips: {
-                displayColors: true,
-                callbacks: { mode: 'x' },
-            },
-            scales: {
-                xAxes: [{ stacked: true, gridLines: { display: false } }],
-                yAxes: [{ stacked: true, ticks: { beginAtZero: true }, type: 'linear' }]
-            },
-            responsive: true,
-            aspectRatio: 2,
-            maintainAspectRatio: true,
-            legend: { position: 'bottom' }
-        }
-    });
-
+     // Making the second chart
+     let chart2 = document.getElementById('chart2').getContext('2d');
+     // Create the polar area plot for second chart
+     var second_chart = new Chart(chart2, {
+         type: 'polarArea',
+         data: {
+             labels: Year,
+             datasets: [{
+                 label: 'Games Finished',
+                 data: GF,
+                 backgroundColor: '#008d93',
+                 hoverBackgroundColor: '#caf270',
+                 hoverBorderWidth: 1,
+                 borderColor: 'black'
+             }],
+             options: {
+                 responsive: true,
+                 aspectRatio: 2,
+                 maintainAspectRatio: true
+             }
+         },
+     })
+ });
+ // Read in the batting json file
+ d3.json('/static/batting.json').then(function(users) {
+     // Map data to variables
+     var Year = (users.map(item => item.Year)).reverse();
+     var BB = (users.map(item => item.BB)).reverse();
+     var BBB = (users.map(item => item.BBB)).reverse();
+     var Team = (users.map(item => item.Tms)).reverse();
+     var SB = (users.map(item => item.SB)).reverse();
+     var BA = (users.map(item => item.BA)).reverse();
+     var OPS = (users.map(item => item.OPS)).reverse();
+     var HR = (users.map(item => item.HR)).reverse();
+ 
+     // Geting the first chart for batting
+     var chart3 = document.getElementById('chart3').getContext('2d');
+     // Making the chart
+     var third_chart = new Chart(chart3, {
+         type: 'radar',
+         data: {
+             labels: Year,
+             datasets: [{
+                 label: 'Doubles',
+                 backgroundColor: 'rgba(200,0,0,0.2)',
+                 data: BB
+             }, {
+                 label: 'Triples ',
+                 backgroundColor: 'rgba(0,0,200,0.2)',
+                 data: BBB
+             }, {
+                 label: 'Stolen Bases',
+                 backgroundColor: 'rgba(0,200,0,0.2',
+                 data: SB
+ 
+             }]
+         }
+     });
+     // Making the fourth chart
+     var chart4 = document.getElementById('chart4').getContext('2d')
+     var fourth_chart = new Chart(chart4, {
+         // Define the type for the chart, we can put in bar or line or google for more type
+         type: 'line',
+         // This is where we define the xaxis and the data for yaxis
+         data: {
+             // Define the axis as Year
+             labels: Year,
+             // This is for the data to plot for yaxis
+             datasets: [{
+                 label: 'Home Runs',
+                 borderColor: 'red',
+                 data: HR,
+                 fill: false
+             }]
+         },
+         // This is the options that go with the chart
+         options: {
+             tooltips: {
+                 displayColors: true,
+                 callbacks: { mode: 'x' },
+             },
+             scales: {
+                 xAxes: [{ stacked: true, gridLines: { display: false } }],
+                 yAxes: [{ stacked: true, ticks: { beginAtZero: true }, type: 'linear' }]
+             },
+             responsive: true,
+             aspectRatio: 2,
+             maintainAspectRatio: true,
+             legend: { position: 'bottom' }
+ 
+         }
+     });
+     var chart5 = document.getElementById('chart5').getContext('2d')
+     var fifth_chart = new Chart(chart5, {
+         // Define the type for the chart, we can put in bar or line or google for more type
+         type: 'line',
+         // This is where we define the xaxis and the data for yaxis
+         data: {
+             // Define the axis as Year
+             labels: Year,
+             // This is for the data to plot for yaxis
+             datasets: [{
+                 label: 'Batting Average',
+                 borderColor: 'green',
+                 data: BA,
+                 fill: false
+             }]
+         },
+         // This is the options that go with the chart
+         options: {
+             tooltips: {
+                 displayColors: true,
+                 callbacks: { mode: 'x' },
+             },
+             scales: {
+                 xAxes: [{ stacked: true, gridLines: { display: false } }],
+                 yAxes: [{ stacked: true, ticks: { beginAtZero: true }, type: 'linear' }]
+             },
+             responsive: true,
+             aspectRatio: 2,
+             maintainAspectRatio: true,
+             legend: { position: 'bottom' }
+         }
+     });
+ 
 });

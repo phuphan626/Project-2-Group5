@@ -1,0 +1,132 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <link rel="apple-touch-icon" sizes="76x76" href="../assets/img/apple-icon.png">
+    <script src="https://kit.fontawesome.com/3d0e170f3d.js" crossorigin="anonymous"></script>
+    <link rel="icon" type="image/png" href="../assets/img/favicon.ico">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <title>Visual Exploration: Considerations</title>
+    <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no' name='viewport' />
+    <!--     Fonts and icons     -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" />
+    <!-- CSS Files -->
+    <link href="../assets/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="../assets/css/light-bootstrap-dashboard.css?v=2.0.0 " rel="stylesheet" />
+   
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="sidebar"  data-color="blue">
+           
+
+    <div class="sidebar-wrapper">
+        <div class="logo">
+            <a class="simple-text">
+                A Century of <br> Baseball
+            </a>
+        </div>
+        <ul class="nav">
+            <li class="nav-item">
+                <a class="nav-link" href="./dashboard.html">
+                    <i class="nc-icon nc-umbrella-13"></i>
+                    <p>Overview</p>
+                </a>
+            </li>
+            <li>
+                <a class="nav-link" href="./pitching.html">
+                    <i class="nc-icon nc-send"></i>
+                    <p>Pitching</p>
+                </a>
+            </li>
+            <li>
+                <a class="nav-link" href="./batting.html">
+                    <i class="nc-icon nc-chart-bar-32"></i>
+                    <p>Batting</p>
+                </a>
+            </li>
+            <li>
+                <a class="nav-link" href="./tables.html">
+                    <i class="nc-icon nc-layers-3"></i>
+                    <p>Tables</p>
+                </a>
+            </li>
+            <li>
+                <li class = "active">
+                <a class="nav-link" href="./considerations.html">
+                    <i class="nc-icon nc-chat-round"></i>
+                    <p>Considerations</p>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+        </div>
+        <div class="main-panel">
+            <!-- Navbar -->
+            
+                <div class="container-fluid">
+                    
+                    <button href="" class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
+                        
+                    </button>
+                    <div class="collapse navbar-collapse justify-content-end" id="navigation">
+                        <ul class="nav navbar-nav mr-auto">
+                        </ul>
+                    
+                </div>
+            </nav>
+            <!-- End Navbar -->
+            <div class="content">
+                <div class="container-fluid">
+                    <div class="card">
+                        <div class="card-header">
+                            <h2 class="card-title">Comments and Considerations</h2>
+                            <p class="card-category">A story written in data</p>
+                        </div>
+                       <div>
+                           <p class = "card-body">
+                            Baseball has always been a numbers game. Upon visualizing 100 years of baseball data we can identify ways the game has changed,
+                            and ways it's stayed the same. There are a million reasons for these changes or consistencies, ranging from new rules and technologies, to new ballparks and <a href="https://blogs.loc.gov/loc/2018/09/baseball-and-world-war-i/#:~:text=When%20the%20United%20States%20entered,cusp%20of%20a%20golden%20era.&text=The%20American%20military%20created%2077,were%20played%20throughout%20the%20country.">world wars</a>. 
+                            The best way to try and understand the changes in the game of baseball is to analyze the visualizations and compare against any relevant factors in the time period.  <br><br>
+                            We chose these stats because we wanted to have representation on both sides of the ball,
+                            pitching and batting. Our initial data exploration consisted of identifying obvious trends visible to the naked eye, reflected in the "Strikeouts
+                            per 9 Innings" and "Games Finished" stats. The consistent uptrend in the values of these statistics can be traced back to baseball's early days, and
+                            the natural evolution of the game itself. In the early 1920's the rules governing the actual baseball itself were changed. The ball was designed to be hit harder
+                            and further, and pitchers weren't allowed to smudge dirt and spit on the ball to hinder its flight. According to the data, 
+                            the finesse required to throw quality pitches clearly took longer to develop on a league-wide basis than the concentration required for a batter
+                            to put the ball in play. This is reflected by the consistent "Runs per Game" and "Earned Run Average" stats compared to the steady uptrend in "Strikeouts
+                            per 9 Innings".<br><br>
+                            The consistent uptrend in "Games Finished" as reflected in the <a href = "pitching.html">radial pitching graph</a> can be attributed to the 
+                            incorporation of relief pitchers and eventually closing pitchers. In the early days of baseball, a player could only be substituted in the instance
+                            of sickness or injury. Ineffective pitchers would often switch positions with someone else on the field. In the 1920's we began to see the rise of a new position:
+                            the relief pitcher. Upon analyzing the data we can see the gradual rise of the relief pitcher and closing pitcher. In 1920 around 50% of games were finished by a relief
+                            pitcher as opposed to 99% of games in 2019.<br><br>
+                            
+                        
+                            The changes in batting statistics over the past century can be attributed to shifts in tactics and style of play. Upon examining the <a href="batting.html">radial batting graph</a>
+                            we can clearly see the amount of doubles per game is relatively constant. Looking at triples and stolen bases we begin to get a better picture of how greatly the style of play
+                            has changed in 100 years of baseball. When we take doubles out of the equation, we are able to get a better look at the interplaying relationship between the triple and the stolen bag.
+                            Looking at triples and stolen bases together we can see that their rates go hand in hand. From the 1920's to the mid-1940's the triple is king, indicating
+                            a style of play where speed and extra base hits are prioritized. Around the middle of the century the triple rate falls off drastically and the stolen base rate increases 
+                            rapidly, indicating a shift from riskier baserunning to a style of play called <a href="https://en.wikipedia.org/wiki/Small_ball_(baseball)">"Small Ball"</a> where tactical baserunning
+                            and finesse hitting is employed to advance baserunners. This indicates a major shift in the way the game was played and enjoyed.<br><br>
+                            
+                            Upon examining the line graph for <a href="batting.html">homeruns per game</a> we can see an almost cyclical uptrend. This gives us an opportunity
+                            to try and address why these crests and troughs occur by cross-referencing the data with historical developments, baseball-related or otherwise. One can feel
+                            confident attributing the decrease in the home run rate from .64 per game in 1940 to .37 per game in 1943 to the over 500 major leaguers that served 
+                            in the military during World War II with sluggers Joe DiMaggio, Ted Williams and Stan Musial among them. <br><br>
+                            The final statistic we will explore is the "Batting Average". The graph appears to be relatively constant but there is a steady downtrend in the 
+                            league batting average over the past century. When we couple this with the meteoric rise in "Stikeouts per 9 Innings" stat, it's not hard to understand why. 
+                           </p>
+                       </div>
+</body>
+<!--   Core JS Files   -->
+
+<script src="../assets/js/core/bootstrap.min.js" type="text/javascript"></script>
+
+
+</html>

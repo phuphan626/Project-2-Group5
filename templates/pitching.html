@@ -13,27 +13,19 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.9.1/d3.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/d3-tip/0.7.1/d3-tip.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
-    <script src="//cdn.jsdelivr.net/chartist.js/latest/chartist.min.js"></script>
-    <link href="//cdn.jsdelivr.net/chartist.js/latest/chartist.min.css" rel="stylesheet" type="text/css" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" />
     <!-- CSS Files -->
     <link href="../assets/css/bootstrap.min.css" rel="stylesheet" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.9.1/d3.min.js"></script>
     <link href="../assets/css/light-bootstrap-dashboard.css?v=2.0.0 " rel="stylesheet" />
-    <!-- CSS Just for demo purpose, don't include it in your project -->
-    <!-- <link href="../assets/css/demo.css" rel="stylesheet" /> -->
+   
 </head>
 
 <body>
     <div class="wrapper">
         <div class="sidebar" data-color="blue">
-            <!--
-        Tip 1: You can change the color of the sidebar using: data-color="purple | blue | green | orange | red"
 
-        Tip 2: you can also add an image using data-image tag
-    -->
     <div class="sidebar-wrapper">
         <div class="logo">
             <a class="simple-text">
@@ -78,50 +70,72 @@
         </div>
         <div class="main-panel">
             <!-- Navbar -->
-            <nav class="navbar navbar-expand-lg " color-on-scroll="500">
+            
                 <div class="container-fluid">
-                    <a class="navbar-brand" href="#pablo"> Pitching Statistic Visualizations </a>
-                    <button href="" class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-bar burger-lines"></span>
-                        <span class="navbar-toggler-bar burger-lines"></span>
-                        <span class="navbar-toggler-bar burger-lines"></span>
-                    </button>
                     <div class="collapse navbar-collapse justify-content-end" id="navigation">
                         <ul class="nav navbar-nav mr-auto">
-                            <li class="nav-item">
-                                <a href="#" class="nav-link" data-toggle="dropdown">
-                                    
-                                    <span class="d-lg-none">Dashboard</span>
-                                </a>
-                            </li>
-                            
-                    </div>
                 </div>
             </nav>
-<div>
-    <p>Hello user, the chart below displays muliple datapoints combined. 
-        click the legend item(s) to remove that data point from the graph to dynamically render data you wish to see:</p>
+
+    <div class="content">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="card ">
+                        <div class="card-header ">
+                            <h2 class="card-title">Pitching Visualizations</h2>
+                            
+                            <p class="card-category">A story written in data</p>
+                        </div>
+                        
+                            <p class = "card-body">
+    
+        
+        These interactive charts show the relationships and changes over time of a few popular pitching metrics.
         <br>
-        <h2>ENJOY!!</h2>
+        Click on the colored bars to toggle the graph to reflect the metric you wish to see.
+        <br>
+
+        Refer to the legend for in-depth information about how these metrics are calculated.
+    </p>
+        <br>
+        
 <div class="row">
     <div class="col-md-12">
-        <canvas id="chart1">The first chart</canvas>
+        <canvas id="chart1"></canvas>
     </div>
 </div>
-<H4>Legend Description</H4>
-<ul>
-    <li>Team = The number of team in the league </li>
-    <li>RG = Runs/Game =</li>
-    <li>ERA = Errors</li>
-    <li>GF= Games Finished</li>    
-</ul>
+<div class = "legend-description">
+    <H4>Legend</H4>
+        <div class = "legend-description ul">
+            <ul style = "list-style-type: none;">
+                <li>Team = The Number of Teams in the League </li>
+                <li>R/G = Runs per Game (Total Runs/Total Games) </li>
+                <li>ERA = Earned Run Average (9 * ER/IP)</li>
+                <li>HR = Total Homeruns/Total Games</li>
+                <li>SO/9 = Strikeouts per 9 Innings</li> 
+                </ul>
 </div>
+<div class = "row">
+    
     <div class="col-md-12">
-        <canvas id="chart2">The second chart</canvas>
+        
+        <canvas id="chart2"></canvas>
+        
     </div>
+    
+    </div>
+    <div class = "legend-description">
+        <h4><a href = "http://m.mlb.com/glossary/standard-stats/games-finished">Games Finished</a></h4>
+        <ul style = "list-style-type: none;">
+        <li> This graph shows the percentage of games finished by a relief pitcher or closer.</li>
+        <li> Hover over the individual bars to see the year and the percentage of games finished by a reliever/closer</li>
+        <li> The labeled boxes can be clicked to remove years as you please for comparing and contrasting different time periods </li>
+        <li>In 2019, 99% of games were finished by someone other than the starting pitcher. This means that only 1% of games 
+            were complete games thrown only by the starter. 
+        </li>
 
+</div>
 </body>
 <script type="text/javascript" src="/static/logic.js"></script>
-<!-- <script type="json" src='/data/pitching.json'></script>
-<script type="json" src='/data/batting.json'></script> -->
 </html>
