@@ -107,7 +107,7 @@ d3.json('/static/batting.json').then(function(users) {
                 backgroundColor: 'rgba(0,0,200,0.2)',
                 data: BBB
             }, {
-                label: 'Stolen Basis',
+                label: 'Stolen Bases',
                 backgroundColor: 'rgba(0,200,0,0.2',
                 data: SB
 
