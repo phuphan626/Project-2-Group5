@@ -23,6 +23,7 @@ CREATE TABLE "batting_stats" (
     "BBB" float   NOT NULL,
     "SB" float   NOT NULL,
     "BA" float   NOT NULL,
-    "OPS" float   NOT NULL
+    "OPS" float   NOT NULL,
+	"HR"  float  NOT NULL
 );
 
