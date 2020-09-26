@@ -10,30 +10,82 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
     <script src="//cdn.jsdelivr.net/chartist.js/latest/chartist.min.js"></script>
     <link href="//cdn.jsdelivr.net/chartist.js/latest/chartist.min.css" rel="stylesheet" type="text/css" />
-    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <meta charset="utf-8">
 </head>
 
 <body>
 
-    <header class='header'><strong>Welcome to our Homepage</strong></header>
-    <hr>
-    <div class="chart-container">
-        <canvas id="chart1" width="600" height="400"></canvas>
-        <canvas id='chart2' width="600" height="400"></canvas>
-        <canvas id="chart3" width="600" height="400"></canvas>
-        <canvas id='chart4' width="600" height="400"></canvas>
-        <canvas id='chart5' width="600" height="400"></canvas>
+    <h3 class='header'><strong>Welcome to our Homepage</strong></h3>
+<br>
+<div>
+    <p style="font-size: larger;">Hello user, the chart below displays muliple datapoints combined. 
+        click the legend item(s) to remove that data point from the graph to dynamically render data you wish to see:</p>
+        <br>
+<div class="chart-container" padding='20'>
+        <div class="row">
+            <div class="col-md-9">
+            <canvas id="chart1"></canvas>
+            <H4>Legend Description</H4>
+            <ul>
+                <li>Team = The number of team in the league </li>
+                <li>RG =</li>
+                <li>ERA = Errors</li>
+                <li>GF= Games Finished</li>    
+            </ul>
+            </div>
+        </div>
+<br>
+<br>
+<hr>
+        <div class ="row">
+        <div class="col-md-9">
+                <canvas id="chart2"></canvas>
+                <H4>Legend Description</H4>
+                <ul>
+                    <li>HR = Home Runs </li>  
+                </ul>
+                </div>
+        </div>   
+<br>
+<br>
+<hr>
+        <div class ="row">
+        <div class="col-md-9">
+            <canvas id="chart3"></canvas>
+        </div>
+        </div>
+<br>
+<br>
+<hr>
+        <div class ="row">
+        <div class="col-md-9">
+            <canvas id="chart4"></canvas>
+        </div>
+        </div>  
+<br>
+<br>
+<hr>
+        <div class ="row">
+        <div class="col-md-10">
+                <canvas id="chart5"></canvas>
+        </div>
+        </div> 
+<br>
+<br>
+<hr>
+        <div class ="row">
+        <div class="col-md-10">
+                <canvas id=".ct-chart"></canvas>
+        </div>
+        </div> 
 
-    </div>
 
-
+</div>
 
 </body>
 <script type="text/javascript " src="/static/logic.js "></script>
 <!-- <script type="json " src='/data/pitching.json'></script>
 <script type="json " src='/data/batting.json'></script> -->
-
-
-
 </html>
