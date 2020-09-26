@@ -1,1 +1,1 @@
-my_key = 'postgres'
+my_key = '12345'
