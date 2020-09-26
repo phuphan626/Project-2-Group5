@@ -69,7 +69,10 @@ d3.json('/static/pitching.json').then(function(users) {
             datasets: [{
                 label: 'Home Run',
                 data: HR,
-                backgroundColor: '#caf270'
+                backgroundColor: '#008d93',
+                hoverBackgroundColor: '#caf270',
+                hoverBorderWidth: 1,
+                borderColor: 'black'
             }],
             options: {
                 responsive: true,
