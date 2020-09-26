@@ -10,7 +10,8 @@ app.config['SEND_FILE_MAX_AGE_DEFAULT'] = 0
 # Create the routes for Flask
 @app.route("/")
 def index():
-    return render_template('index.html')
+    return render_template('dashboard.html')
+    # return render_template('index.html')
 @app.route('/pitching_graph')
 @app.route('/batting_graph')
 @app.route('/writeup')

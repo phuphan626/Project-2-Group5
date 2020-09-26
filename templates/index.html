@@ -2,6 +2,14 @@
 <html lang="en">
 
 <head>
+    <meta charset="utf-8" />
+    <link rel="apple-touch-icon" sizes="76x76" href="../assets/img/apple-icon.png">
+    <link rel="icon" type="image/png" href="../assets/img/favicon.ico">
+    <script src="https://kit.fontawesome.com/3d0e170f3d.js" crossorigin="anonymous"></script>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <title>Visual Exploration: Pitching Stats</title>
+    <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no' name='viewport' />
+    <!--     Fonts and icons     -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Baseball Statistics</title>
@@ -10,32 +18,190 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
     <script src="//cdn.jsdelivr.net/chartist.js/latest/chartist.min.js"></script>
     <link href="//cdn.jsdelivr.net/chartist.js/latest/chartist.min.css" rel="stylesheet" type="text/css" />
-    <link rel="stylesheet" href="/css/style.css">
-    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" />
+    <!-- CSS Files -->
+    <link href="../assets/css/bootstrap.min.css" rel="stylesheet" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.9.1/d3.min.js"></script>
+    <link href="../assets/css/light-bootstrap-dashboard.css?v=2.0.0 " rel="stylesheet" />
+    <!-- CSS Just for demo purpose, don't include it in your project -->
+    <!-- <link href="../assets/css/demo.css" rel="stylesheet" /> -->
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="sidebar" data-color="blue">
+            <!--
+        Tip 1: You can change the color of the sidebar using: data-color="purple | blue | green | orange | red"
+
+        Tip 2: you can also add an image using data-image tag
+    -->
+            <div class="sidebar-wrapper">
+                <div class="logo">
+                    <a class="simple-text">
+                A Century of <br> Baseball 
+            </a>
+                </div>
+                <ul class="nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="dashboard.html">
+                            <i class="nc-icon nc-umbrella-13"></i>
+                            <p>Overview</p>
+                        </a>
+                    </li>
+                    <li>
+                        <li class="active">
+                            <a class="nav-link" href="./pitching.html">
+                                <i class="nc-icon nc-send"></i>
+                                <p>Pitching</p>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="nav-link" href="./batting.html">
+                                <i class="nc-icon nc-chart-bar-32"></i>
+                                <p>Batting</p>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="nav-link" href="./tables.html">
+                                <i class="nc-icon nc-layers-3"></i>
+                                <p>Tables</p>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="nav-link" href="./considerations.html">
+                                <i class="nc-icon nc-chat-round"></i>
+                                <p>Considerations</p>
+                            </a>
+                        </li>
+
+                </ul>
+            </div>
+        </div>
+        <div class="main-panel">
+            <!-- Navbar -->
+            <nav class="navbar navbar-expand-lg " color-on-scroll="500">
+                <div class="container-fluid">
+                    <a class="navbar-brand" href="#pablo"> Pitching Statistic Visualizations </a>
+                    <button href="" class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-bar burger-lines"></span>
+                        <span class="navbar-toggler-bar burger-lines"></span>
+                        <span class="navbar-toggler-bar burger-lines"></span>
+                    </button>
+                    <div class="collapse navbar-collapse justify-content-end" id="navigation">
+                        <ul class="nav navbar-nav mr-auto">
+                            <li class="nav-item">
+                                <a href="#" class="nav-link" data-toggle="dropdown">
+
+                                    <span class="d-lg-none">Dashboard</span>
+                                </a>
+                            </li>
+
+                    </div>
+                </div>
+            </nav>
+            <div>
+                <p>Hello user, the chart below displays muliple datapoints combined. click the legend item(s) to remove that data point from the graph to dynamically render data you wish to see:</p>
+                <br>
+                <h2>ENJOY!!</h2>
+                <div class="row">
+                    <div class="col-md-12">
+                        <canvas id="chart1">The first chart</canvas>
+                    </div>
+                </div>
+                <H4>Legend Description</H4>
+                <ul>
+                    <li>Team = The number of team in the league </li>
+                    <li>RG = Runs/Game =</li>
+                    <li>ERA = Errors</li>
+                    <li>GF= Games Finished</li>
+                </ul>
+            </div>
+            <div class="col-md-12">
+                <canvas id="chart2">The second chart</canvas>
+            </div>
+
+</body>
+<script type="text/javascript" src="/static/logic.js"></script>
+<!-- <script type="json" src='/data/pitching.json'></script>
+<script type="json" src='/data/batting.json'></script> -->
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<meta charset="utf-8">
 </head>
 
 <body>
 
-    <header class='header'><strong>Welcome to our Homepage</strong></header>
-    <hr>
-    <div class="chart-container">
-        <canvas id="chart1" width="600" height="400"></canvas>
-        <canvas id='chart2' width="600" height="400"></canvas>
-        <canvas id="chart3" width="600" height="400"></canvas>
-        <canvas id='chart4' width="600" height="400"></canvas>
-        <canvas id='chart5' width="600" height="400"></canvas>
-        <canvas id='chart6' width="600" height="400"></canvas>
-        <canvas id='chart7' width="600" height="400"></canvas>
+    <h3 class='header'><strong>Welcome to our Homepage</strong></h3>
+    <br>
+    <div>
+        <p style="font-size: larger;">Hello user, the chart below displays muliple datapoints combined. click the legend item(s) to remove that data point from the graph to dynamically render data you wish to see:</p>
+        <br>
+        <div class="chart-container" padding='20'>
+            <div class="row">
+                <div class="col-md-9">
+                    <canvas id="chart1"></canvas>
+                    <H4>Legend Description</H4>
+                    <ul>
+                        <li>Team = The number of team in the league </li>
+                        <li>RG =</li>
+                        <li>ERA = Errors</li>
+                        <li>GF= Games Finished</li>
+                    </ul>
+                </div>
+            </div>
+            <br>
+            <br>
+            <hr>
+            <div class="row">
+                <div class="col-md-9">
+                    <canvas id="chart2"></canvas>
+                    <H4>Legend Description</H4>
+                    <ul>
+                        <li>HR = Home Runs </li>
+                    </ul>
+                </div>
+            </div>
+            <br>
+            <br>
+            <hr>
+            <div class="row">
+                <div class="col-md-9">
+                    <canvas id="chart3"></canvas>
+                </div>
+            </div>
+            <br>
+            <br>
+            <hr>
+            <div class="row">
+                <div class="col-md-9">
+                    <canvas id="chart4"></canvas>
+                </div>
+            </div>
+            <br>
+            <br>
+            <hr>
+            <div class="row">
+                <div class="col-md-10">
+                    <canvas id="chart5"></canvas>
+                </div>
+            </div>
+            <br>
+            <br>
+            <hr>
+            <div class="row">
+                <div class="col-md-10">
+                    <canvas id=".ct-chart"></canvas>
+                </div>
+            </div>
 
-    </div>
 
-
+        </div>
 
 </body>
 <script type="text/javascript " src="/static/logic.js "></script>
 <!-- <script type="json " src='/data/pitching.json'></script>
 <script type="json " src='/data/batting.json'></script> -->
-
-
 
 </html>

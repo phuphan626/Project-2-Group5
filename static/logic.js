@@ -197,6 +197,7 @@ d3.json('/static/batting.json').then(function(users) {
     });
 
 });
+<<<<<<< HEAD
 let chart2 = document.getElementById('chart2').getContext('2d');
 // Create the polar area plot for second chart
 var second_chart = new Chart(chart2, {
@@ -345,3 +346,5 @@ d3.json('/static/batting.json').then(function(users) {
     });
 
 });
+=======
+>>>>>>> b8f995e8d2af8e782b76315f3384be913d3188a6
